@@ -1,11 +1,12 @@
-# --- Import libraries --- #
+
+''' Import libraries ___________________________________'''
 
 from PIL import Image                                   # Pillow to render image
 from numpy import log as ln, arctan as taninv, e        # Natural logarithm, inverse tangent, and Euler's constant
 from random import uniform                              # Random number generator
 
 
-# --- Variables and parameters --- #
+''' Variables and parameters ___________________________'''
 
 num_points = 100000     # Number of points to render, positive integer
 iterations = 10         # Number of times of iterative transformations, positive integer, default 10
@@ -19,7 +20,7 @@ resx, resy = round(width*img_scaling), round(height*img_scaling)    # Size of im
 img = Image.new('RGB', (resx, resy))                                # Create a new image object
 
 
-# --- Defining the signum function --- #
+''' Defining the signum function _______________________'''
 
 def sgn(num) :
     if num > 0 : return  1
@@ -27,14 +28,15 @@ def sgn(num) :
     return 0
 
 
-# --- Random number generator with a -ln(abs(x/span)) probability density --- #
+''' Random number generator 
+    with a -ln(abs(x/span)) probability density ________'''
 
 def rand():
     q = uniform(0, span)
     return uniform(-q, q)
 
 
-# --- Generate points on the fractal --- #
+''' Generate points on the fractal _____________________'''
 
 for point in range(num_points) :
 
@@ -60,13 +62,10 @@ for point in range(num_points) :
     if not (point*100)%num_points : print(f'{(point*100)//num_points+1}% completed')      # Progress update
 
 
-# --- Export image --- #
+''' Export image _______________________________________'''
 
 print('Processing Image...')
 img = img.resize((width,height), Image.LANCZOS)     # Downscale image
 img.save('output.png')                              # Save image
 print('Done.')
 img.show()                                          # Display image
-
-
-''' ___ Sparsha Ray, MS21256, ver 1.1 dated 31/07/2022, iiserm ___ '''
