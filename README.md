@@ -5,9 +5,10 @@ A spiraling fractal on the complex plane.
   
 ![Cropped](Cropped.png)  
   
-The basic fractal is defined as the set Z<sub>n</sub> as n tends to infinity, where -  
-Z<sub>n+1</sub> = { (2m + sgn(Re(z)) (1-e<sup>|Re(z)|(ln(k)+𝑖)</sup>) + k<sup>|Re(z)|</sup> e<sup>𝑖(|Re(z)|-arctan(ln(k))</sup> Im(z)) | z∈Z<sub>n</sub>, m∈ℤ } ,  
-Z<sub>0</sub> = { (2m + sgn(Re(θ)) (1-e<sup>|Re(θ)|(ln(k)+𝑖)</sup>) | θ∈ℝ, m∈ℤ } ,  
-k ∈ (0, 1)  
-  
-It is a fractal of logarithmic spirals.
+The basic fractal is defined as the set $z_n$ as $n$ tends to $\infty$, where
+
+$$\begin{aligned}
+  z_{n+1}&=\left\{\left(2 m+\operatorname{sgn}(\operatorname{Re}(\mathrm{z}))\left(1-\mathrm{e}^{|\operatorname{Re}(z)|(\ln (k)+i)}\right)+k^{|\operatorname{Re}(z)|} e^{i(|\operatorname{Re}(z)|-\arctan (\ln (k))} \ln(z)\right) \mid z \in z_n, m \in \mathbb{Z}\right\} \\
+ z_0&=\left\{\left(2 m+\operatorname{sgn}(\operatorname{Re}(\theta))\left(1-\mathrm{e}^{|\operatorname{Re}(\theta)|(\ln (k)+i)}\right) \mid \theta \in \mathbb{R}, \mathrm{m} \in \mathbb{Z}\right\}\right. 
+\end{aligned}$$
+where $k\in(0,1)$ It is a fractal of logarithmic spirals.
